@@ -31,7 +31,7 @@ import { copyFileSync, mkdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const MAX_BYTES = 1024 * 1024; // the rules cap the image at 1 MiB
+const MAX_BYTES = 1 << 20; // the rules cap the image at 1 MiB
 const PNG_SIGNATURE = Buffer.from("89504e470d0a1a0a", "hex");
 
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
